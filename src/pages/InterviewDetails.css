@@ -1,0 +1,68 @@
+.details-container {
+    padding: 30px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .details-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+  
+  .details-role {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 24px;
+  }
+  
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  
+  .details-table th, .details-table td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .details-table th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+  }
+  
+  .details-table a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .status-active {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status-completed {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+  
+  .status-pending {
+    background-color: #fef9c3;
+    color: #92400e;
+  }
+  

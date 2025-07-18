@@ -1,0 +1,148 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 41, 59, 0.18);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.template-modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px 36px 24px 36px;
+  min-width: 520px;
+  max-width: 700px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.modal-group {
+  margin-bottom: 18px;
+}
+
+.modal-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  margin-bottom: 6px;
+  transition: border-color 0.2s;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fff;
+}
+
+.imported-file {
+  font-size: 0.95rem;
+  color: #2563eb;
+  margin-top: 4px;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.question-block {
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 16px 16px 10px 16px;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 4px rgba(59,130,246,0.04);
+}
+
+.question-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.remove-question-btn {
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.remove-question-btn:disabled {
+  background: #f3f4f6;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.remove-question-btn:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.add-question-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add-question-btn:hover {
+  background: #2563eb;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+button.primary {
+  min-width: 140px;
+}
+
+button.outline {
+  min-width: 110px;
+}
+
+@media (max-width: 700px) {
+  .template-modal {
+    min-width: 90vw;
+    padding: 18px 6vw 18px 6vw;
+  }
+  .question-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+} 

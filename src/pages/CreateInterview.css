@@ -1,0 +1,145 @@
+.create-interview-page {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  padding: 40px 48px 32px 48px;
+}
+
+.create-interview-form {
+  width: 100%;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.form-input {
+  padding: 10px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fff;
+}
+
+textarea.form-input {
+  resize: vertical;
+}
+
+.radio-group {
+  display: flex;
+  gap: 32px;
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.focus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.focus-tag {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #d1d5db;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 0.98em;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  color: #374151;
+}
+
+.focus-tag.selected {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+.template-section {
+  border: 1.5px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  background: #f9fafb;
+  margin-top: 12px;
+}
+
+.template-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.template-empty {
+  color: #888;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+button.primary {
+  min-width: 150px;
+}
+
+button.outline {
+  min-width: 120px;
+}
+
+@media (max-width: 900px) {
+  .create-interview-page {
+    padding: 32px 16px 24px 16px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+} 

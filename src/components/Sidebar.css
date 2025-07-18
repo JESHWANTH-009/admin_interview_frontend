@@ -1,0 +1,139 @@
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #e2e8f0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #334155;
+  z-index: 1000;
+}
+
+.sidebar-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 32px 24px 0 24px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 12px;
+  margin: 4px 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  transition: width 0.3s ease;
+}
+
+.sidebar-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.sidebar-link:hover::before {
+  width: 100%;
+}
+
+.sidebar-link.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transform: translateX(4px);
+}
+
+.sidebar-link.active::before {
+  display: none;
+}
+
+.sidebar-user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  border-top: 1px solid #334155;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Hover effects for better interactivity */
+.sidebar-link:active {
+  transform: translateX(2px) scale(0.98);
+}
+
+/* Smooth transitions for all interactive elements */
+.sidebar-link * {
+  transition: all 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+  }
+  
+  .sidebar-title {
+    font-size: 1.2rem;
+    padding: 24px 16px 0 16px;
+  }
+  
+  .sidebar-link {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+} 

@@ -35,7 +35,8 @@ export default function Dashboard({ onLogout }) {
         // Active Sessions logic
         const activeCount = interviews.filter(i => {
           const candidates = Array.isArray(i.candidates) ? i.candidates : [];
-          if (candidates.length === 0) return false;
+          if (candidates.length === 0) return false; 
+          
           const completedCandidates = candidates.filter(c => c.status === 'completed').length;
           return candidates.length !== completedCandidates;
         }).length;

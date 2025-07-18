@@ -24,11 +24,11 @@ export default function Dashboard({ onLogout }) {
         const interviews = Array.isArray(data.interviews) ? data.interviews : [];
         setTotalInterviews(interviews.length);
         // Calculate completed sessions: candidates.length > 0 && candidates.length === responses.length
-        const completedSessions = interviews.filter(i => {
-          const candidates = Array.isArray(i.candidates) ? i.candidates : [];
-          const responses = Array.isArray(i.responses) ? i.responses : [];
-          return candidates.length > 0 && candidates.length === responses.length;
-        }).length;
+        // const completedSessions = interviews.filter(i => {
+        //   const candidates = Array.isArray(i.candidates) ? i.candidates : [];
+        //   const responses = Array.isArray(i.responses) ? i.responses : [];
+        //   return candidates.length > 0 && candidates.length === responses.length;
+        // }).length;
         // Calculate completion rate
         // const rate = interviews.length > 0 ? Math.round((completedSessions / interviews.length) * 100) : 0;
         // setCompletionRate(`${rate}%`); // This line was commented out in the original file

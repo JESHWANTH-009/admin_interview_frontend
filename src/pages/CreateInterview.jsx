@@ -29,7 +29,8 @@ export default function CreateInterview() {
 
   // const showTemplateSection = ... // eslint-disable-line no-unused-vars
   const [templateModalOpen, setTemplateModalOpen] = useState(false);
-  const [templates, setTemplates] = useState([]);
+  const [setTemplates] = useState([]);
+  //templates
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [extractedQuestions, setExtractedQuestions] = useState([]);
   const [editableQuestions, setEditableQuestions] = useState([]);

@@ -10,6 +10,7 @@ export default function Dashboard({ onLogout }) {
   const [activeSessions, setActiveSessions] = useState('--');
   const [recentInterviews, setRecentInterviews] = useState([]);
   const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchInterviewStats = async () => {
       setLoading(true);

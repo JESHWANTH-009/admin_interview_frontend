@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/api/*",
-      "rewrite": "https://admin-api.centralindia.azurecontainerapps.io/api/*"
+      "rewrite": "https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io/api/*"
     },
     {
       "route": "/interview/*",

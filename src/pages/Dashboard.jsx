@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-// const API_URL = process.env.REACT_APP_API_URL;
-const API_URL ="https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io";
+const API_URL = process.env.REACT_APP_API_URL;
+//const API_URL ="https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io";
 export default function Dashboard({ onLogout }) {
   const [totalInterviews, setTotalInterviews] = useState('--');
   // const completionRate = ... // eslint-disable-line no-unused-vars
@@ -10,7 +10,7 @@ export default function Dashboard({ onLogout }) {
   const [activeSessions, setActiveSessions] = useState('--');
   const [recentInterviews, setRecentInterviews] = useState([]);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const fetchInterviewStats = async () => {
       setLoading(true);
@@ -24,11 +24,6 @@ export default function Dashboard({ onLogout }) {
           },
         });
         
-
-  //       fetch(`${API_URL}/interviews`)
-  // .then((res) => res.json())
-  // .then((data) => console.log(data));
-
         const data = await res.json();
         const interviews = Array.isArray(data.interviews) ? data.interviews : [];
         setTotalInterviews(interviews.length);

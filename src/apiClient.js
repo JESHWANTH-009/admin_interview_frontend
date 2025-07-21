@@ -4,6 +4,8 @@ import { auth } from './firebase';
 const apiClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL || '',
 });
+console.log("API Base URL:", apiClient.defaults.baseURL);
+
 
 // Request interceptor to add Authorization header
 apiClient.interceptors.request.use(

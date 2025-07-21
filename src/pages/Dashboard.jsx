@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
+const API_URL ="https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io";
 export default function Dashboard({ onLogout }) {
   const [totalInterviews, setTotalInterviews] = useState('--');
   // const completionRate = ... // eslint-disable-line no-unused-vars

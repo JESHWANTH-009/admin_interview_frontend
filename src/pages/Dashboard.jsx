@@ -15,16 +15,19 @@ export default function Dashboard({ onLogout }) {
       setLoading(true);
       try {
         const token = localStorage.getItem('firebase_id_token');
+        
+        console.log("API_URL", API_URL); // Add this just before the fetch
         const res = await fetch(`${API_URL}/interviews`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
+        
 
-        fetch(`${API_URL}/interviews`)
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-  
+  //       fetch(`${API_URL}/interviews`)
+  // .then((res) => res.json())
+  // .then((data) => console.log(data));
+
         const data = await res.json();
         const interviews = Array.isArray(data.interviews) ? data.interviews : [];
         setTotalInterviews(interviews.length);

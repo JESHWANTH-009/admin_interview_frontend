@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Interviews.css";
 import apiClient from '../apiClient';
 const API_URL = process.env.REACT_APP_API_URL;
-
+console.log("API_URL", API_URL);
 export default function Interviews() {
   const [searchTerm, setSearchTerm] = useState("");
   // const [statusFilter, setStatusFilter] = useState("all"); // eslint-disable-line no-unused-vars

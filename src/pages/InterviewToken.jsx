@@ -4,6 +4,7 @@ import apiClient from "../apiClient";
 import "./InterviewToken.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
+console.log("API_URL", API_URL);
 export default function InterviewToken() {
   const { token } = useParams();
   const [loading, setLoading] = useState(true);

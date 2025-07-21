@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './InterviewDetails.css';
 const API_URL = process.env.REACT_APP_API_URL;
-
+console.log("API_URL", API_URL);
 const InterviewDetails = () => {
   const { id } = useParams();
   const [interview, setInterview] = useState(null);

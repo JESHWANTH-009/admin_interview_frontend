@@ -2,7 +2,7 @@ import axios from 'axios';
 import { auth } from './firebase';
 
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || '',
+  baseURL: process.env.REACT_APP_API_URL || 'https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io',
 });
 console.log("API Base URL:", apiClient.defaults.baseURL);
 

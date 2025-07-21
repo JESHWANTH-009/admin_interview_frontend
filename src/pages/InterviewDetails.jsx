@@ -12,7 +12,7 @@ const InterviewDetails = () => {
     const fetchInterview = async () => {
       try {
         const token = localStorage.getItem('firebase_id_token');
-        const res = await fetch(`${API_URL}/interviews/${id}`, {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/interviews/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

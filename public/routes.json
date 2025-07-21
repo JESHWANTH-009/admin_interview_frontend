@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "route": "/api/*",
+      "rewrite": "https://admin-api.centralindia.azurecontainerapps.io/api/*"
+    },
+    {
       "route": "/interview/*",
       "serve": "/index.html",
       "statusCode": 200

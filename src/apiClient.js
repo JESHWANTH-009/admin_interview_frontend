@@ -9,8 +9,8 @@ const apiClient = axios.create({
   baseURL: resolvedBaseURL,
 });
 // Log to verify environment variable and fallback
-console.log("✅ ENV REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
-console.log("✅ Using Base URL:", apiClient.defaults.baseURL);
+console.log("ENV REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
+console.log("Using Base URL:", apiClient.defaults.baseURL);
 
 // Add Authorization header before each request
 apiClient.interceptors.request.use(

@@ -18,8 +18,7 @@ export default function Interviews() {
         const response = await fetch(`${API_URL}/interviews`, {
           headers: {
             Authorization: `Bearer ${token}`,
-          },
-          credentials: "include"
+          }
         });
         if (!response.ok) throw new Error("Failed to fetch interviews");
         const data = await response.json();

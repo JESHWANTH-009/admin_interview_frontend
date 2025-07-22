@@ -8,7 +8,6 @@ const resolvedBaseURL = process.env.REACT_APP_API_URL || defaultBaseURL;
 const apiClient = axios.create({
   baseURL: resolvedBaseURL,
 });
-
 // Log to verify environment variable and fallback
 console.log("✅ ENV REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
 console.log("✅ Using Base URL:", apiClient.defaults.baseURL);

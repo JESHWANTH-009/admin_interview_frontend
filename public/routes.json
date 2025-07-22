@@ -10,7 +10,7 @@
       "statusCode": 200
     },
     {
-      "route": "/dashboard",
+      "route": "/dashboard/*",
       "serve": "/index.html",
       "statusCode": 200
     },

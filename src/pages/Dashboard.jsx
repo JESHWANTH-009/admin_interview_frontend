@@ -24,7 +24,7 @@ export default function Dashboard({ onLogout }) {
             Authorization: `Bearer ${token}`,
           },
         });
-        
+        console.log("API+interviews",res);
         const data = await res.json();
         const interviews = Array.isArray(data.interviews) ? data.interviews : [];
         setTotalInterviews(interviews.length);

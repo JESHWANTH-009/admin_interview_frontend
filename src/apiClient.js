@@ -1,13 +1,19 @@
 import axios from 'axios';
 import { auth } from './firebase';
 
+// Use HTTPS only - fallback is safe for local dev
+const defaultBaseURL = 'https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io';
+const resolvedBaseURL = process.env.REACT_APP_API_URL || defaultBaseURL;
+
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://admin-interview-backend.orangeplant-f4cd2fc4.southindia.azurecontainerapps.io',
+  baseURL: resolvedBaseURL,
 });
-console.log("API Base URL:", apiClient.defaults.baseURL);
 
+// Log to verify environment variable and fallback
+console.log("✅ ENV REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
+console.log("✅ Using Base URL:", apiClient.defaults.baseURL);
 
-// Request interceptor to add Authorization header
+// Add Authorization header before each request
 apiClient.interceptors.request.use(
   async (config) => {
     const user = auth.currentUser;
@@ -21,12 +27,12 @@ apiClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor to handle 401 and refresh token
+// Handle 401 errors and retry with refreshed token
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
-    // Prevent infinite loop
+
     if (
       error.response &&
       error.response.status === 401 &&
@@ -34,7 +40,6 @@ apiClient.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       try {
-        // Force refresh the token
         const user = auth.currentUser;
         if (user) {
           const newToken = await user.getIdToken(true);
@@ -42,15 +47,15 @@ apiClient.interceptors.response.use(
           return apiClient(originalRequest);
         }
       } catch (refreshError) {
-        // Token refresh failed, redirect to login
         window.location.href = '/login';
         return Promise.reject(refreshError);
       }
-      // If no user, redirect to login
+
       window.location.href = '/login';
     }
+
     return Promise.reject(error);
   }
 );
 
-export default apiClient; 
+export default apiClient;

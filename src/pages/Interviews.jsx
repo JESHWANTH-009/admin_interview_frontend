@@ -6,7 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 console.log("API_URL", API_URL);
 export default function Interviews() {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [statusFilter, setStatusFilter] = useState("all"); // eslint-disable-line no-unused-vars
+  
   const [roleFilter, setRoleFilter] = useState("all");
   const [interviews, setInterviews] = useState([]);
   const navigate = useNavigate();
@@ -44,43 +44,10 @@ export default function Interviews() {
   const filteredInterviews = interviews.filter((interview) => {
     const matchesSearch = interview.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          interview.role.toLowerCase().includes(searchTerm.toLowerCase());
-    // const matchesStatus = statusFilter === "all" || interview.status === statusFilter; // eslint-disable-line no-unused-vars
+    
     const matchesRole = roleFilter === "all" || interview.role === roleFilter;
     return matchesSearch && matchesRole;
   });
-
-  // const getStatusBadgeClass = (status) => { // eslint-disable-line no-unused-vars
-  //   switch (status) {
-  //     case "active": return "badge-success";
-  //     case "completed": return "badge-info";
-  //     case "draft": return "badge-warning";
-  //     case "paused": return "badge-error";
-  //     default: return "badge-warning";
-  //   }
-  // };
-
-  // const getStatusText = (status) => { // eslint-disable-line no-unused-vars
-  //   switch (status) {
-  //     case "active": return "Active";
-  //     case "completed": return "Completed";
-  //     case "draft": return "Draft";
-  //     case "paused": return "Paused";
-  //     default: return status;
-  //   }
-  // };
-
-  // const getPrimaryAction = (interview) => { // eslint-disable-line no-unused-vars
-  //   if (interview.status === "active") {
-  //     return <button className="primary">Send Invites</button>;
-  //   } else if (interview.status === "draft") {
-  //     return <button className="primary">Activate</button>;
-  //   } else if (interview.status === "paused") {
-  //     return <button className="primary">Resume</button>;
-  //   } else if (interview.status === "completed") {
-  //     return <button className="primary">Export Results</button>;
-  //   }
-  //   return null;
-  // };
 
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this interview?')) return;

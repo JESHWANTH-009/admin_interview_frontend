@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import apiClient from '../apiClient';
 import './InterviewPage.css';
 const API_URL = process.env.REACT_APP_API_URL;
-//const API_BASE_URL = 'http://localhost:8000'; 
 console.log("API_URL", API_URL);
 const InterviewPage = () => {
   const { token } = useParams();
